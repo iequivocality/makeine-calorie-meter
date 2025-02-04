@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Quantico:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Makeine Calorie Meter</title>
+  </head>  
+  <body>
+    <div id="app">
+      <div id="calorie_container">
+        <div class="cap">
+          <div class="no">最終話まで</div>
+          <div class="text">の総摂取カロリー</div>
+        </div>
+        <div class="kcal with-comma">
+          <span class="number">8</span>
+          <span class="number">5</span>
+          <span class="number">8</span>
+          <span class="number">1</span>
+          <span class="number">8</span>
+        </div>
+        <div class="unit">kcal</div>
+      </div>
+      <div id="episode_select_list">
+        <button class="select_item" data-episodenumber="1">第1話</button>
+        <button class="select_item" data-episodenumber="2">第2話</button>
+        <button class="select_item" data-episodenumber="3">第3話</button>
+        <button class="select_item" data-episodenumber="4">第4話</button>
+        <button class="select_item" data-episodenumber="5">第5話</button>
+        <button class="select_item" data-episodenumber="6">第6話</button>
+        <button class="select_item" data-episodenumber="7">第7話</button>
+        <button class="select_item" data-episodenumber="8">第8話</button>
+        <button class="select_item" data-episodenumber="9">第9話</button>
+        <button class="select_item" data-episodenumber="10">第10話</button>
+        <button class="select_item" data-episodenumber="11">第11話</button>
+        <button class="select_item" data-episodenumber="12">最終話</button>
+      </div>
+      <div id="episode_total">
+        <button class="select_item" data-episodenumber="0">合計</button>
+      </div>      
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>  
+</html>

@@ -1,0 +1,157 @@
+/* CSS variables */
+:root {
+  --color-white: #ffffff;
+  --color-blue: #070a7d;
+  --color-yellow: #fff100;
+  --color-orange: #ff7031;
+  /* This is for our timing function for the animation */
+  --ease-out: cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+/* Remove default margin and use border-box sizing on all elements */
+* {
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Base font-style for rem units */
+html {
+  font-size: 3.125vw;
+}
+
+/* Base body style */
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/* Calorie meter container styles */
+#calorie_container {
+  color: var(--color-blue);
+  font-family: "Quantico", serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 40px 40px 12px;
+  border: 2px solid var(--color-blue);
+  border-radius: 10px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  line-height: 1;
+  margin-bottom: 60px;
+
+  .cap {
+    position: absolute;
+    display: flex;
+    align-items: baseline;
+    width: fit-content;
+    padding: 8px 15px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--color-white);
+    background-color: var(--color-orange);
+    top: 0;
+    left: 15%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+
+    .no {
+      flex-shrink: 0;
+      font-size: 1.5em;
+    }
+
+    .text {
+      flex-shrink: 0;
+    }
+  }
+
+  .kcal {
+    display: flex;
+    column-gap: 10px;
+    color: var(--color-blue);
+    width: fit-content;
+
+    .number {
+      position: relative;
+      display: grid;
+      place-items: center;
+
+      width: 100.5px;
+      height: 122px;
+      font-size: 100px;
+      border-radius: 10px;
+      line-height: 1;
+      background-color: var(--color-yellow);
+    }
+
+    /* For calorie total with comma (when at least 1000 kcal) */
+    &.with-comma {
+      .number:nth-child(2) {
+        margin-right: 24px;
+      }
+
+      .number:nth-child(2):after {
+        content: ",";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(100%, 0%);
+      }
+    }
+  }
+
+  .unit {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0;
+    margin-top: 4px;
+  }
+}
+
+/* Container for our episode selection */
+#episode_select_list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+/* Style for each episode selection button */
+button.select_item {
+  display: block;
+  width: 100%;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-orange);
+  color: var(--color-orange);
+  padding: 7px 10px;
+  border-radius: 20rem;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+
+  /* Hover styles for each button */
+  &:hover {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+  }
+}
+
+/* Different styles for the total button */
+#episode_total {
+  width: 360px;
+  margin: 20px auto 0;
+  margin-bottom: 52px;
+}
+
+/* Adds transitions to each button when media allows hover and fine pointer events. */
+@media (hover: hover) and (pointer: fine) {
+  button.select_item {
+    transition: color 0.4s var(--ease-out), background-color 0.4s var(--ease-out);
+  }
+}
